@@ -1,0 +1,20 @@
+
+<%- include("partials/header"); -%>
+    <h1>Home</h1>
+    <p> <%= startingContent %> </p>
+
+
+   <% posts.forEach(function(post){ %>  <%# Loops through all posts in the JS object and outputs them one by one %>
+
+    <h1><%=post.title%></h1>
+    <p>
+    <%=post.content.substring(0, 100) + " ..."%>
+    <a href="/posts/<%=post._id%>">Read More</a>      <%# if they click the href link it takes them to the mongoDB document id of the posts %>
+
+    </p>
+
+
+    <% }) %>
+
+
+<%- include("partials/footer"); -%>
